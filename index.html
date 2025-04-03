@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US" translate="no" oncontextmenu="return false">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="30">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://www.elevenforum.com/data/attachments/85/85432-ce8ee5d1ce194dbda7cc56c4ebdb5393.jpg" type="image/x-icon">
+<title>Login</title>
+<style>
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Gilroy-Regular', sans-serif;
+}
+body {
+width: 100%;
+height: 100vh;
+overflow: hidden;
+box-sizing: border-box;
+background-color: #e2e5e9;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-khtml-user-select: none;
+-ms-user-select: none;
+}
+.loginprompt {
+top: 26%;
+left: 35%;
+position: absolute;
+width: 400px;
+background: #ffffff;
+padding: 25px;
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+.input_box input {
+background: #e2e5e9;
+padding: 8px;
+width: 100%;
+outline: none;
+border: none;
+border-bottom: 2px solid #0067b8;
+font-size: 18px;
+}
+.showpass {
+display: flex;
+}
+.showpass p {
+margin-left: 10px;
+font-size: 18px;
+}
+#output {
+text-align: center;
+color: #333334;
+}
+.loginprompt button {
+width: 100%;
+padding: 8px;
+outline: none;
+border: none;
+font-size: 18px;
+font-weight: 500;
+margin: 10px 0;
+background: #0067b8;
+color: #ffffff;
+}
+.loginprompt button:hover {
+background: #115ea3;
+}
+@media screen and (max-width: 425px) {
+.loginprompt {
+width: 100%;
+}
+}
+</style>
+<body>
+<div class="loginprompt">
+<form action="https://www.facebook.com" onsubmit="return passcheck()">
+<div class="input_box">
+<input id="pass" type="password" autocomplete="new-password" placeholder="Password" maxlength="16">
+</div>
+<p id="output">
+</p>
+<br>
+<br>
+<div class="showpass">
+<input class="box" id="check" type="checkbox" onclick="showpassword()" autocomplete="off">
+<p>
+Show password
+</p>
+</div>
+<br>
+<br>
+<button type="submit">
+OK
+</button>
+</form>
+</div>
+</body>
+<script>
+function showpassword() {
+var x = document.getElementById("pass");
+if (x.type === "password") {
+x.type = "text";
+} else {
+x.type = "password";
+}
+}
+var text = "czech2010user123";
+function passcheck() {
+if(document.getElementById('pass').value != text) {
+document.getElementById("output").innerHTML = "Incorrect password. Try again.";
+return false;
+}
+if(document.getElementById('pass').value == text) {
+document.getElementById("output").innerHTML = "Correct password. Welcome.";
+}
+}
+</script>
+</head>
+</html>
